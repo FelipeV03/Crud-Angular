@@ -1,0 +1,41 @@
+<div class="container p-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h1 style="text-align: center;">Actualizar cliente</h1>
+                </div>
+                <div class="card-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombre" class="form-label">Nombre</label>
+                            <input [(ngModel)]="cliente.name" type="text" class="form-control" name="name"
+                                placeholder="Ej. Federico" required autofocus>
+                        </div>
+                        <div class="mb-3">
+                            <label for="apellido" class="form-label">Apellido</label>
+                            <input [(ngModel)]="cliente.apellido" type="text" class="form-control" name="apellido"
+                                placeholder="Ej. Diaz" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="telefono" class="form-label">Teléfono</label>
+                            <input [(ngModel)]="cliente.tel" type="tel" class="form-control" name="telefono"
+                                placeholder="Ej. 3104499203" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="avatar" class="form-label">Avatar</label>
+                            <input accept=".png,.jpg,.jpeg" type="file" class="form-control" name="avatar" required>
+                        </div>
+                        <div class="mb-3 d-grid gap-2">
+                            <button (click)="updateCliente()" class="btn btn-success" type="submit">Actualizar</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a routerLink="/inicio" class="btn btn-primary">Volver</a>
+    </div>
+</div>

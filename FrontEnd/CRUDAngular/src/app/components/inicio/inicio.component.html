@@ -1,0 +1,40 @@
+<div style="text-align: center;">
+    <h1>Lista Clientes</h1>
+</div>
+<div class="container">
+    <table id="miTabla" class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Telefono</th>
+                <th>Avatar</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Aquí irían los datos de la tabla -->
+            <tr *ngFor="let cliente of ListarClientes; index as i">
+                <td> {{i + 1}} </td>
+                <td> {{ cliente.name }} </td>
+                <td> {{ cliente.apellido }} </td>
+                <td> {{ cliente.tel }} </td>
+                <td><img src="http://localhost:4000/img/{{ cliente.avatar }}" width="50px" height="50px" alt="Avatar">
+                </td>
+                <td>
+                    <button class="btn btn-primary" (click)="EditarCliente(cliente.id, cliente)">
+                        Editar <i class="fa-solid fa-user-pen"></i>
+                    </button>
+                    <button class="btn btn-danger" (click)="EliminarCliente(cliente.id, cliente)">
+                        Eliminar <i class="fa-solid fa-user-minus"></i>
+                    </button>
+                </td>
+        </tbody>
+    </table>
+</div>
+
+<script>
+
+
+</script>
